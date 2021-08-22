@@ -1,48 +1,22 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {SafeAreaView, StatusBar, Text, TextInput} from 'react-native';
+import useWebSocket from './useWebSocket';
 
-const wsUrl = 'ws://localhost:3000';
-
-let socket;
-
-function setUpWebSocket(onMessageReceived) {
-  if (!socket) {
-    socket = new WebSocket(wsUrl);
-    console.log('Attempting Connection...');
-
-    socket.onopen = () => {
-      console.log('Successfully Connected');
-    };
-
-    socket.onclose = event => {
-      console.log('Socket Closed Connection: ', event);
-      socket = null;
-    };
-
-    socket.onerror = error => {
-      console.error('Socket Error: ', error);
-    };
-  }
-
-  socket.onmessage = event => {
-    onMessageReceived(event.data);
-  };
-}
+const url = 'ws://localhost:3000';
 
 export default function App() {
   const [messages, setMessages] = useState([]);
   const [newMessageText, setNewMessageText] = useState('');
 
+  function onMessageReceived(newMessage) {
+    setMessages([...messages, newMessage]);
+  }
+  const send = useWebSocket({url, onMessageReceived});
+
   function handleSend() {
-    socket.send(newMessageText);
+    send(newMessageText);
     setNewMessageText('');
   }
-
-  useEffect(() => {
-    setUpWebSocket(newMessage => {
-      setMessages([...messages, newMessage]);
-    });
-  }, [messages]);
 
   return (
     <>
