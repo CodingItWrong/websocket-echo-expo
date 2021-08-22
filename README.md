@@ -1,12 +1,14 @@
-# (your app name)
+# websocket-chat-expo
 
-A brief description of your app.
+A simple WebSocket client using Expo and React Native.
+
+Because some abstractions over WebSocket only work in the browser, compatibility with this tool demonstrates that a given WebSocket backend is standards-compliant and works in React Native too.
 
 ## Requirements
 
 - [Yarn](https://yarnpkg.com/en/docs/install)
 - [Expo CLI](https://facebook.github.io/react-native/docs/getting-started)
-- [Detox CLI](https://github.com/wix/Detox/blob/master/docs/Introduction.GettingStarted.md)
+- A [websocket-chat backend](https://github.com/CodingItWrong?tab=repositories&q=websocket-chat&type=&language=&sort=)
 
 ## Installation
 
@@ -21,23 +23,3 @@ $ yarn start
 ```
 
 Then click "Run on Android device/emulator" or "Run on iOS simulator".
-
-## Testing
-
-### Linting
-
-```bash
-$ yarn lint
-```
-
-### Unit Tests
-
-```bash
-$ yarn test
-```
-
-### End-to-End Tests (iOS)
-
-```bash
-$ detox test
-```
