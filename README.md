@@ -1,4 +1,4 @@
-# websocket-chat-expo
+# websocket-echo-expo
 
 A simple WebSocket client using Expo and React Native.
 
@@ -8,7 +8,7 @@ Because some abstractions over WebSocket only work in the browser, compatibility
 
 - [Yarn](https://yarnpkg.com/en/docs/install)
 - [Expo CLI](https://facebook.github.io/react-native/docs/getting-started)
-- A [websocket-chat backend](https://github.com/CodingItWrong?tab=repositories&q=websocket-chat&type=&language=&sort=)
+- A [websocket-echo backend](https://github.com/CodingItWrong?tab=repositories&q=websocket-echo&type=&language=&sort=)
 
 ## Installation
 
