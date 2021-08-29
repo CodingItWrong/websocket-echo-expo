@@ -1,6 +1,6 @@
 # websocket-echo-expo
 
-A simple WebSocket client using Expo and React Native.
+A simple WebSocket client using Expo and React Native, for Android, iOS, and Web.
 
 Because some abstractions over WebSocket only work in the browser, compatibility with this tool demonstrates that a given WebSocket backend is standards-compliant and works in React Native too.
 
@@ -22,4 +22,8 @@ $ yarn install
 $ yarn start
 ```
 
-Then click "Run on Android device/emulator" or "Run on iOS simulator".
+Then click any of:
+
+- Run on Android device/emulator
+- Run on iOS simulator
+- Run in web browser (React Native for Web)
